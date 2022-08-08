@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talc_messenger/floating_action_button_section/floating_action_button_section.dart';
 
 import 'appbar/appbar.dart';
 
@@ -40,6 +41,7 @@ class _TalcStructureState extends State<TalcStructure> {
             ),
           ),
         ),
+        floatingActionButton: TalcFloatingActionButtonSection(),
       ),
     );
   }
