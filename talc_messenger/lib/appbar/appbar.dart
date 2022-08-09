@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talc_messenger/custom_progress_indicator/custom_progress_indicator.dart';
 
 import 'appbar_clipper.dart';
 
@@ -8,11 +9,14 @@ class TalcAppBar extends StatefulWidget with PreferredSizeWidget {
     required this.height,
     this.homePage = true,
     this.text = const Text(''),
+    this.showProgressIndicator = false,
   }) : super(key: key);
 
   final double height;
   final bool homePage;
   final Widget text;
+
+  final bool showProgressIndicator;
 
   @override
   State<TalcAppBar> createState() => _TalcAppBarState();
@@ -29,6 +33,14 @@ class _TalcAppBarState extends State<TalcAppBar> {
     return SafeArea(
       child: Stack(
         children: [
+          /// ProgressBar
+          if (widget.showProgressIndicator)
+            const Positioned(
+              bottom: 14.0,
+              child: TalcCustomProgressbarIndicator(),
+            ),
+
+          /// Background (Shape + Colors)
           ClipPath(
             clipper: AppBarShapeClipper(),
             child: Container(
