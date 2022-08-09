@@ -13,7 +13,7 @@
 - Add designs
   - Add home screen design ![](https://img.shields.io/static/v1?label=&message=in%20development&color=yellow)
   - Add chat screen design ![](https://img.shields.io/static/v1?label=&message=in%20development&color=yellow) 
-  - Add 'new contact' screen design ![](https://img.shields.io/static/v1?label=&message=not%20started&color=black)
+  - Add 'new contact' screen design ![](https://img.shields.io/static/v1?label=&message=in%20development&color=yellow)
   - Add settings screen design ![](https://img.shields.io/static/v1?label=&message=not%20started&color=black)
 - Add/Define API specification/protocol ![](https://img.shields.io/static/v1?label=&message=not%20started&color=black) 
 - Add features 
