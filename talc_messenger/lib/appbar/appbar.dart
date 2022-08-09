@@ -48,7 +48,10 @@ class _TalcAppBarState extends State<TalcAppBar> {
               ),
             ),
           ),
-          configureSearchButton(), //NOTE: when not needed on non-homepage add this above:  if(widget.homePage)
+
+          /// Search Button
+          if (widget.homePage) //NOTE: when needed on non-homepage remove this
+            configureSearchButton(),
         ],
       ),
     );
@@ -63,7 +66,9 @@ class _TalcAppBarState extends State<TalcAppBar> {
         child: IconButton(
           color: Colors.white,
           iconSize: 32.0,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back),
         ),
       ));

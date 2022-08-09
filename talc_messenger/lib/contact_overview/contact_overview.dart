@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talc_messenger/pages/chat_page/chat_page.dart';
 
 class TalcContactOverview extends StatefulWidget {
   const TalcContactOverview({Key? key, required this.contacts})
@@ -16,12 +17,14 @@ class _TalcContactOverviewState extends State<TalcContactOverview> {
     return ListView.builder(
       itemCount: widget.contacts.length,
       itemBuilder: (context, idx) {
-        return GestureDetector(
+        return InkWell(
           onTap: () {
-            print('Contact tapped: ${widget.contacts[idx]}');
+            Navigator.push(
+                context, _createChatScreenRoute(widget.contacts[idx]));
           },
           child: SizedBox(
             height: 75.0,
+            width: MediaQuery.of(context).size.width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,6 +63,31 @@ class _TalcContactOverviewState extends State<TalcContactOverview> {
               ],
             ),
           ),
+        );
+      },
+    );
+  }
+
+  Route _createChatScreenRoute(String contact) {
+    var transitionDuration = const Duration(milliseconds: 90);
+
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => TalcChatScreen(
+        contact: contact,
+      ),
+      transitionDuration: transitionDuration,
+      reverseTransitionDuration: transitionDuration,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.easeInOut;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
         );
       },
     );
