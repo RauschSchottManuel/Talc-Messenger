@@ -4,7 +4,7 @@
 
  Feature status:
  
- - ![](https://img.shields.io/static/v1?label=&message=finished&color=green),
+ - ![](https://img.shields.io/static/v1?label=&message=finished&color=darkgreen),
  - ![](https://img.shields.io/static/v1?label=&message=in%20development&color=yellow) or ![](https://img.shields.io/static/v1?label=&message=ongoing%20changes&color=yellow)
  - ![](https://img.shields.io/static/v1?label=&message=not%20started&color=black)
 
